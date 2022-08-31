@@ -30,3 +30,14 @@ lst = [60, 21, 11, 20, 17, 55, 70, 5, 9]
 lst1 = [60, 21, 11, 20, 3, 93, 55, 70]
 print(find_min_digit_1(lst))
 print(find_min_digit_2(lst1))
+
+
+def get_sum_1(lst_obj):
+    """Простой цикл"""
+
+    res = 0
+    for el in lst_obj:
+        res = res + el
+    return res
+
+print(get_sum_1([1, 3, 5, 7, 9]))
