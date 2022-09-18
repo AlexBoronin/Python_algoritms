@@ -1,6 +1,6 @@
 # Задание 2.
 # Реализуйте два алгоритма.
-# Оба должны обеспечивать поиск минимального значения для списка. - для списка чего (каких элементов)? - предположим списка чисел
+# Оба должны обеспечивать поиск минимального значения для списка.
 # Сложность первого алгоритма должна быть O(n^2) - квадратичная.
 # Сложность второго алгоритма должна быть O(n) - линейная.
 # Примечание: ПРОШУ ВАС ВНИМАТЕЛЬНО ЧИТАТЬ ЗАДАНИЕ!
@@ -9,21 +9,21 @@
 # -- проставьте сложности каждого выражения в двух ваших алгоритмах
 
 
-def find_min_digit_1(lst):  # O(n) - линейная
-    min = lst[0]                    # O(1)
-    for i in range(len(lst) - 1):   # O(len(...)
-        if min > lst[i + 1]:        # O(1)
-            min = lst[i]            # O(1)
-    return min
+def find_min_digit_1(lst):              # O(n) - линейная
+    min_dig = lst[0]                    # O(1)
+    for i in range(len(lst) - 1):       # O(len(...)
+        if min_dig > lst[i + 1]:        # O(1)
+            min_dig = lst[i]            # O(1)
+    return min_dig
 
 
-def find_min_digit_2(lst1):  #O(n^2) - квадратичная
-    for i in lst1:                      # O(1)
-        min = i                         # O(1)
-        for k in range(len(lst1)-1):    # O(len(...)
-            if min > lst1[k]:           # O(1)
-                min = lst1[k]           # O(1)
-    return min
+def find_min_digit_2(lst1):             # O(n^2) - квадратичная
+    for i in lst1:                      # O(len(...)
+        min_dig = i                     # O(1)
+        for k in range(len(lst1) - 1):  # O(len(...)
+            if min_dig > lst1[k]:       # O(1)
+                min_dig = lst1[k]       # O(1)
+    return min_dig
 
 
 lst = [60, 21, 11, 20, 17, 55, 70, 5, 9]
@@ -32,12 +32,3 @@ print(find_min_digit_1(lst))
 print(find_min_digit_2(lst1))
 
 
-def get_sum_1(lst_obj):
-    """Простой цикл"""
-
-    res = 0
-    for el in lst_obj:
-        res = res + el
-    return res
-
-print(get_sum_1([1, 3, 5, 7, 9]))
